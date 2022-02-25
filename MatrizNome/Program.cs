@@ -109,23 +109,21 @@ namespace MatrizNome
 
                     case "6":
                         Console.Write("Digite o numero da linha que gostaria de ordenar: ");
-                        int choice = int.Parse(Console.ReadLine()); // escolhi um numero pra linha
-                        if (choice < 1 || choice > proj.GetLength(0)) //verifico se essa linha existe
+                        int choice = int.Parse(Console.ReadLine()); 
+                        if (choice < 1 || choice > proj.GetLength(0)) 
                         {
                             Console.WriteLine("\nOpção invalida. Tente novamente.");
                         }
-                        else //se chegou aqui é pq a linha existe!
+                        else 
                         {
-                            choice--; //decrementei 1 posição, pq o sistema lê a partir de zero e usuario lê a partir de 1.
+                            choice--; 
 
-                            for (int c1 = 0; c1 < proj.GetLength(0); c1++) //laço pra repetir minha coluna de referencia
+                            for (int c1 = 0; c1 < proj.GetLength(0); c1++) 
                             {
-                                for (int c2 = c1 + 1; c2 < proj.GetLength(0); c2++) // laço pra repetir minha coluna de comparação.
+                                for (int c2 = c1 + 1; c2 < proj.GetLength(0); c2++) 
                                 {
-                                    if (String.Compare(proj[choice, c1], proj[choice, c2], StringComparison.Ordinal) > 0) //linha fica travada na posição que o usuario escolheu(choice) 
-                                                                                                                         //primeira matriz usa a variavel de referencia na coluna
-                                                                                                                         //segunda matriz usa a variavel de comparação na coluna
-                                    {   //faço as trocas.
+                                    if (String.Compare(proj[choice, c1], proj[choice, c2], StringComparison.Ordinal) > 0) 
+                                    {   
                                         string aux = proj[choice, c1];
                                         proj[choice, c1] = proj[choice, c2];
                                         proj[choice, c2] = aux;
